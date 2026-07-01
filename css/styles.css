@@ -389,6 +389,30 @@ p {
   width: 100%;
 }
 
+.story-panel {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, #f8fbf7 100%);
+  border: 3px solid rgba(56, 102, 65, 0.14);
+  border-radius: 20px;
+  box-shadow: 0 18px 38px rgba(56, 102, 65, 0.06);
+  margin: 28px 0;
+  padding: clamp(20px, 3vw, 28px);
+}
+
+.story-panel h2,
+.story-panel h3 {
+  margin-top: 0;
+}
+
+.story-panel p {
+  color: var(--muted);
+}
+
+.story-panel .wide-image {
+  border: 1px solid rgba(56, 102, 65, 0.12);
+  border-radius: 16px;
+  margin: 18px 0 24px;
+}
+
 .comment-box,
 .cta-panel,
 .disclosure {
@@ -539,7 +563,6 @@ p {
 .source-callout-lead {
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(56, 102, 65, 0.08);
-  border-radius: 16px;
   color: var(--ink);
   font-size: 17px;
   line-height: 1.75;
@@ -555,7 +578,6 @@ p {
 .source-callout-fact {
   background: rgba(255, 255, 255, 0.82);
   border-left: 4px solid var(--color-forest);
-  border-radius: 14px;
   box-shadow: 0 8px 18px rgba(24, 43, 58, 0.05);
   padding: 14px 16px;
 }
@@ -1555,7 +1577,6 @@ cite {
   background: rgba(255, 255, 255, 0.78);
   align-items: center;
   border: 1px solid rgba(56, 102, 65, 0.12);
-  border-radius: 16px;
   color: var(--color-ink);
   display: flex;
   flex-direction: column;
@@ -1730,7 +1751,11 @@ cite {
 
 /* ── Comparison table ────────────────────── */
 .comparison-wrap {
+  background: var(--color-surface);
+  border: 1px solid var(--line);
+  border-radius: 20px;
   margin: 34px 0;
+  padding: clamp(20px, 3vw, 28px);
 }
 
 .comparison-wrap h2 {
@@ -1743,17 +1768,18 @@ cite {
 }
 
 .comparison-table {
+  border: 1px solid var(--line);
   border-collapse: collapse;
   font-size: 15px;
   margin-bottom: 24px;
-  min-width: 560px;
+  min-width: 640px;
   width: 100%;
 }
 
 .comparison-table th,
 .comparison-table td {
   border: 1px solid var(--line);
-  padding: 12px 14px;
+  padding: 14px 16px;
   text-align: center;
   vertical-align: middle;
 }
@@ -1772,20 +1798,20 @@ cite {
 }
 
 .comparison-table .col-derila {
-  background: var(--color-surface-success);
-  border-color: var(--color-lime);
+  background: #eef6e8;
+  border-color: #c9dfb7;
   font-weight: 700;
 }
 
 .comparison-table thead .col-derila {
-  background: linear-gradient(180deg, var(--color-sage), var(--color-forest));
+  background: var(--color-forest);
   color: var(--color-surface);
 }
 
 .col-badge {
-  background: var(--color-surface);
+  background: rgba(255, 255, 255, 0.16);
   border-radius: 4px;
-  color: var(--color-forest);
+  color: inherit;
   display: block;
   font-size: 10px;
   font-weight: 900;
@@ -1795,7 +1821,7 @@ cite {
 }
 
 .comparison-table .check {
-  color: var(--color-success);
+  color: var(--color-forest);
 }
 
 .comparison-table .cross {
@@ -1809,7 +1835,7 @@ cite {
 }
 
 .comparison-table .stars-low {
-  color: #c8a43a;
+  color: #9c7c1f;
   font-size: 15px;
   letter-spacing: -1px;
   opacity: 0.7;
@@ -2313,5 +2339,101 @@ cite {
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+  }
+
+  .comparison-wrap {
+    border-radius: 16px;
+    margin: 28px 0;
+    padding: 16px;
+  }
+
+  .comparison-table-scroll {
+    overflow: visible;
+  }
+
+  .comparison-table {
+    border: 0;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 18px;
+    min-width: 0;
+  }
+
+  .comparison-table thead {
+    display: none;
+  }
+
+  .comparison-table tbody {
+    display: grid;
+    gap: 12px;
+  }
+
+  .comparison-table tr {
+    background: var(--color-surface-alt);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 14px;
+  }
+
+  .comparison-table td {
+    border: 0;
+    padding: 0;
+  }
+
+  .comparison-table td:first-child {
+    color: var(--ink);
+    font-size: 14px;
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+    text-align: left;
+  }
+
+  .comparison-table td:nth-child(2),
+  .comparison-table td:nth-child(3),
+  .comparison-table td:nth-child(4) {
+    background: var(--color-surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    font-size: 12px;
+    line-height: 1.35;
+    min-height: 74px;
+    padding: 10px 8px;
+    position: relative;
+  }
+
+  .comparison-table td:nth-child(2)::before,
+  .comparison-table td:nth-child(3)::before,
+  .comparison-table td:nth-child(4)::before {
+    color: var(--muted);
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .comparison-table td:nth-child(2)::before {
+    content: "Derila Ergo";
+  }
+
+  .comparison-table td:nth-child(3)::before {
+    content: "CPAP";
+  }
+
+  .comparison-table td:nth-child(4)::before {
+    content: "Nasenstrips";
+  }
+
+  .comparison-table .col-derila {
+    background: #edf5e4;
+  }
+
+  .col-badge {
+    display: inline-block;
+    margin-top: 6px;
   }
 }
