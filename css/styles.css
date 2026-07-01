@@ -486,16 +486,7 @@ p {
   gap: 16px;
 }
 
-.source-offer-link {
-  color: var(--color-forest);
-  display: block;
-  font-size: 16px;
-  margin: 0 0 22px;
-}
 
-.source-offer-link strong {
-  color: var(--color-ink);
-}
 
 .source-callout {
   background: linear-gradient(180deg, #f7fbf4 0%, #edf6e8 100%);
@@ -594,18 +585,41 @@ p {
   padding: 14px 16px;
 }
 
-.quote-pill {
-  background: var(--color-cream);
-  border-radius: 999px;
-  color: var(--color-ink);
-  font-size: 17px;
-  font-style: italic;
-  font-weight: 700;
-  line-height: 1.45;
-  margin: 24px auto;
-  max-width: 720px;
-  padding: 12px 22px;
+.source-offer-link {
+  color: var(--color-forest);
+  display: block;
+  font-size: 16px;
+  margin: 0 0 22px;
+  text-decoration: none;
   text-align: center;
+  margin-top: 22px;
+  padding: 12px 14px;
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-forest);
+
+}
+
+.source-offer-link:hover {
+  background: var(--color-forest);
+  color: var(--color-surface);
+  
+}
+
+.long-text{
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-forest);
+  border-radius: 8px;
+  margin: 22px 0;
+  padding: 18px 22px;
+}
+
+.quote-pill {
+  margin-top: 12px;
+  background: var(--color-forest);
+  color: var(--color-surface);
+  padding: 4px 32px;
+  text-align: center;
+  border-radius: 999px;
 }
 
 .source-features {
