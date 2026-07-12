@@ -1,22 +1,22 @@
 :root {
-  --color-forest: #386641;
-  --color-sage: #6a994e;
-  --color-lime: #a7c957;
+  --color-forest: #2f5536;
+  --color-sage: #5a7d3f;
+  --color-lime: #8fae4a;
   --color-cream: #f2e8cf;
-  --color-clay: #bc4749;
-  --color-warning: #d4a017;
-  --color-ink: #1d1d1f;
-  --color-muted: #3d4042;
-  --color-border: #b4bbc4;
+  --color-clay: #b23a3c;
+  --color-warning: #b5850f;
+  --color-ink: #1a1a1c;
+  --color-muted: #33363a;
+  --color-border: #c2c8d0;
   --color-surface: #ffffff;
-  --color-surface-alt: #f5f7fa;
-  --color-surface-soft: #eef8ee;
+  --color-surface-alt: #f6f7f9;
+  --color-surface-soft: #f5f6f8;
   --color-surface-warm: #fcf8e3;
   --color-surface-warm-border: #fbeed5;
-  --color-surface-info: #eef7ff;
-  --color-surface-success: #eff9ef;
+  --color-surface-info: #eef4fb;
+  --color-surface-success: #f4f7f4;
   --color-surface-muted: #f4f4f4;
-  --color-surface-panel: #f6fbf7;
+  --color-surface-panel: #f7f8fa;
   --color-surface-warning: #fffaf0;
   --color-surface-lilac: #f8f6ff;
   --color-surface-highlight: #f4fbff;
@@ -55,9 +55,9 @@ body {
   margin: 0;
   color: var(--ink);
   font-family: Manrope, Arial, sans-serif;
-  font-size: 18px;
-  line-height: 1.65;
-  background: #f8f7f5;
+  font-size: 19px;
+  line-height: 1.7;
+  background: #f7f8fa;
   overflow-x: clip;
 }
 
@@ -179,7 +179,7 @@ img {
 
 .premium-hero {
   align-items: center;
-  background: #f5f9f4;
+  background: #f5f6f8;
   border: 1px solid rgba(56, 102, 65, 0.12);
   border-radius: 24px;
   box-shadow: 0 20px 50px rgba(24, 43, 58, 0.08);
@@ -359,7 +359,7 @@ p {
 .author {
   align-items: center;
   color: var(--muted);
-  background: #eaf2e6;
+  background: #eef0f3;
   border: 1px solid rgba(56, 102, 65, 0.14);
   border-radius: 18px;
   display: flex;
@@ -397,7 +397,7 @@ p {
 }
 
 .story-panel {
-      background: #eff4ea;
+      background: #f0f2f5;
   border: 3px solid rgba(56, 102, 65, 0.14);
   box-shadow: 0 18px 38px rgba(56, 102, 65, 0.06);
   margin: 28px 0;
@@ -668,7 +668,7 @@ p {
 
 
 .source-callout {
-  background: #f2f8ef;
+  background: #f3f5f8;
   border: 1px solid rgba(56, 102, 65, 0.12);
   border-radius: 0;
   box-shadow: 0 18px 38px rgba(56, 102, 65, 0.08);
@@ -1720,7 +1720,7 @@ cite {
 
 /* ── Trust bar ───────────────────────────── */
 .trust-bar {
-  background: #eff4ea;
+  background: #f0f2f5;
   border-bottom: 1px solid rgba(56, 102, 65, 0.1);
   padding: 14px 0 18px;
 }
@@ -1956,8 +1956,8 @@ cite {
 }
 
 .comparison-table .col-derila {
-  background: #eef6e8;
-  border-color: #c9dfb7;
+  background: #f2f6fb;
+  border-color: #cdd9e6;
   font-weight: 700;
 }
 
@@ -2746,7 +2746,7 @@ cite {
   }
 
   .comparison-table .col-derila {
-    background: #edf5e4;
+    background: #f2f6fb;
   }
 
   .col-badge {
