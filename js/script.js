@@ -4,10 +4,33 @@
   var closers = document.querySelectorAll(".js-quiz-close");
   var views = document.querySelectorAll(".quiz-view");
   var optionButtons = document.querySelectorAll(".quiz-option");
+  var backButtons = document.querySelectorAll(".quiz-back-btn");
   var finalSticky = document.querySelector(".final-sticky");
   var resultSummary = document.getElementById("result-summary");
   var answers = [];
   var currentStep = 1;
+
+  function getFocusable(el) {
+    if (!el) return [];
+    var selectors = 'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
+    return Array.from(el.querySelectorAll(selectors)).filter(function (el) {
+      return el.offsetParent !== null && !el.disabled;
+    });
+  }
+
+  function trapFocus(event) {
+    var focusable = getFocusable(modal);
+    if (focusable.length === 0) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
 
   function showView(selector) {
     views.forEach(function (view) {
@@ -16,6 +39,13 @@
     var next = document.querySelector(selector);
     if (next) {
       next.classList.add("is-active");
+    }
+  }
+
+  function focusFirstOption(stepElement) {
+    var firstOption = stepElement.querySelector(".quiz-option");
+    if (firstOption) {
+      firstOption.focus();
     }
   }
 
@@ -33,12 +63,16 @@
       finalSticky.style.pointerEvents = "";
     }
     showView('.quiz-step[data-step="1"]');
+    var firstStep = document.querySelector('.quiz-step[data-step="1"]');
+    focusFirstOption(firstStep);
+    document.addEventListener("keydown", trapFocus);
   }
 
   function closeQuiz() {
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("quiz-open");
+    document.removeEventListener("keydown", trapFocus);
   }
 
   function buildSummary() {
@@ -82,14 +116,29 @@
 
   optionButtons.forEach(function (button) {
     button.addEventListener("click", function () {
-      answers[currentStep - 1] = button.getAttribute("data-answer");
-      if (currentStep < 5) {
-        currentStep += 1;
-        showView('.quiz-step[data-step="' + currentStep + '"]');
+      var stepView = button.closest(".quiz-step");
+      if (!stepView) return;
+      var step = parseInt(stepView.getAttribute("data-step"), 10);
+      answers[step - 1] = button.getAttribute("data-answer");
+      if (step < 5) {
+        var nextStep = step + 1;
+        showView('.quiz-step[data-step="' + nextStep + '"]');
+        var nextStepEl = document.querySelector('.quiz-step[data-step="' + nextStep + '"]');
+        focusFirstOption(nextStepEl);
         return;
       }
       showView(".quiz-loading");
       window.setTimeout(showResult, 950);
+    });
+  });
+
+  backButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var targetStep = parseInt(button.getAttribute("data-step"), 10);
+      currentStep = targetStep;
+      showView('.quiz-step[data-step="' + targetStep + '"]');
+      var stepEl = document.querySelector('.quiz-step[data-step="' + targetStep + '"]');
+      focusFirstOption(stepEl);
     });
   });
 
@@ -98,7 +147,6 @@
       closeQuiz();
     }
   });
-
 })();
 
 // Countdown timer – counts down to midnight tonight

@@ -70,6 +70,10 @@ a {
   font-weight: 700;
 }
 
+.article a:hover {
+  color: var(--color-forest);
+}
+
 img {
   display: block;
   max-width: 100%;
@@ -572,6 +576,71 @@ p {
   display: block;
   margin: 30px 0;
   width: 100%;
+}
+
+.button-secondary {
+  background: transparent;
+  border: 2px solid var(--color-forest);
+  border-radius: 4px;
+  color: var(--color-forest);
+  display: inline-block;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 12px 22px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.button-secondary:hover {
+  background: var(--color-forest);
+  color: var(--color-surface);
+}
+
+.stat-visual {
+  background: var(--color-surface-soft);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  margin: 28px 0;
+  padding: 28px 24px;
+  text-align: center;
+}
+
+.stat-visual-value {
+  color: var(--color-forest);
+  display: block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.stat-visual-label {
+  color: var(--color-muted);
+  display: block;
+  font-size: 16px;
+  line-height: 1.4;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.stat-bar {
+  background: var(--color-border);
+  border-radius: 999px;
+  height: 14px;
+  margin: 18px auto 0;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.stat-bar span {
+  background: var(--color-forest);
+  border-radius: 999px;
+  display: block;
+  height: 100%;
 }
 
 .feature-grid {
@@ -2390,7 +2459,27 @@ cite {
   }
 
   .quiz-step.is-active,
-  .quiz-loading {
+.quiz-back-btn {
+  background: transparent;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-muted);
+  cursor: pointer;
+  display: inline-block;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  margin-top: 18px;
+  padding: 10px 24px;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.quiz-back-btn:hover {
+  border-color: var(--color-forest);
+  color: var(--color-forest);
+}
+
+.quiz-loading {
     min-height: calc(100dvh - 168px);
   }
 
@@ -2855,15 +2944,7 @@ cite {
 }
 
 .wifes-words-cta .button-secondary {
-  background: transparent;
-  border: 2px solid var(--color-forest);
-  color: var(--color-forest);
   margin-left: 12px;
-}
-
-.wifes-words-cta .button-secondary:hover {
-  background: var(--color-forest);
-  color: var(--color-surface);
 }
 
 /* ── Responsive ────────────────────────────── */

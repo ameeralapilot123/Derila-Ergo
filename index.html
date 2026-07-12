@@ -533,6 +533,11 @@
             Wunder, dass 87% der Benutzer von besserem Schlaf innerhalb der
             ersten Woche berichten.
           </p>
+          <div class="stat-visual">
+            <strong class="stat-visual-value">87%</strong>
+            <span class="stat-visual-label">der Benutzer berichten von besserem Schlaf innerhalb der ersten Woche</span>
+            <div class="stat-bar"><span style="width: 87%"></span></div>
+          </div>
           <p>
             Während CPAP-Geräte Luft in Ihre Atemwege zwängen, arbeitet Derila
             mit der natürlichen Position Ihres Körpers, um sie offen zu halten.
@@ -1021,6 +1026,7 @@
           >
             <span>⚠️</span> Von allem etwas
           </button>
+          <button class="quiz-back-btn" type="button" data-step="1">← Zurück</button>
         </div>
 
         <div class="quiz-view quiz-step" data-step="3">
@@ -1051,6 +1057,7 @@
           >
             <span>🔄</span> Ich wechsle die Position die ganze Nacht
           </button>
+          <button class="quiz-back-btn" type="button" data-step="2">← Zurück</button>
         </div>
 
         <div class="quiz-view quiz-step" data-step="4">
@@ -1088,6 +1095,7 @@
           >
             <span>📉</span> Das hängt von der Nacht ab
           </button>
+          <button class="quiz-back-btn" type="button" data-step="3">← Zurück</button>
         </div>
 
         <div class="quiz-view quiz-step" data-step="5">
@@ -1126,6 +1134,7 @@
           >
             <span>✨</span> Ich habe noch nichts versucht
           </button>
+          <button class="quiz-back-btn" type="button" data-step="4">← Zurück</button>
         </div>
 
         <div class="quiz-view quiz-loading">
@@ -1142,7 +1151,7 @@
           </div>
         </div>
 
-        <div class="quiz-view quiz-result" id="quiz-result">
+        <div class="quiz-view quiz-result" id="quiz-result" aria-live="polite">
           <div class="result-layout">
             <section class="result-insight">
               <p class="quiz-kicker">Ergebnis bereit</p>
